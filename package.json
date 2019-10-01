@@ -1,0 +1,10 @@
+{
+  "name": "cypress-practice",
+  "version": "1.0.0",
+  "description": "Simple demo E2E testing with cypress",
+  "author": "l.x.duy@azoom.jp",
+  "license": "MIT",
+  "dependencies": {
+    "cypress-jest-adapter": "^0.1.1"
+  }
+}
