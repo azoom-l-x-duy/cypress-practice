@@ -15,6 +15,7 @@ describe('Simple testing Google with Cypress', () => {
 
   it('Process exact query "AZoom JP"', () => {
     cy.get('input[name="q"]').focus().type('AZoom JP').blur()
+    cy.get('#searchform').click('right')
     cy.get('form[role="search"]')
       .find('input[name="btnK"]')
       .last()
@@ -31,6 +32,7 @@ describe('Simple testing Google with Cypress', () => {
 
   it('Search result for keyword "AZoom JP"', () => {
     cy.get('input[name="q"]').focus().type('AZoom JP').blur()
+    cy.get('#searchform').click('right')
     cy.get('form[role="search"]')
       .find('input[name="btnK"]')
       .last()
@@ -41,6 +43,7 @@ describe('Simple testing Google with Cypress', () => {
 
   it('Click Google img after searched to go to Google Home', () => {
     cy.get('input[name="q"]').focus().type('AZoom JP').blur()
+    cy.get('#searchform').click('right')
     cy.get('form[role="search"]')
       .find('input[name="btnK"]')
       .last()
