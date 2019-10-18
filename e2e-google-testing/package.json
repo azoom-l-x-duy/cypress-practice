@@ -4,6 +4,9 @@
   "description": "Simple demo E2E testing with cypress",
   "author": "l.x.duy@azoom.jp",
   "license": "MIT",
+  "scripts": {
+    "test:e2e": "cypress open"
+  },
   "dependencies": {
     "cypress-jest-adapter": "^0.1.1"
   },
