@@ -20,7 +20,6 @@ describe('Simple testing Google with Cypress', () => {
       .find('input[name="btnK"]')
       .last()
       .click()
-    cy.wait(500)
     cy.url().should('contain', '=AZoom+JP&')
   })
 
@@ -37,7 +36,6 @@ describe('Simple testing Google with Cypress', () => {
       .find('input[name="btnK"]')
       .last()
       .click()
-    cy.wait(500)
     cy.contains('不動産テックの株式会社アズーム').should('be.visible')
   })
 
@@ -48,7 +46,6 @@ describe('Simple testing Google with Cypress', () => {
       .find('input[name="btnK"]')
       .last()
       .click()
-    cy.wait(500)
     cy.get('#searchform').click(50, 25)
     cy.url().should('include', '/webhp')
   })
