@@ -16,10 +16,7 @@ describe('Simple testing Google with Cypress', () => {
   it('Process exact query "AZoom JP"', () => {
     cy.get('input[name="q"]').focus().type('AZoom JP').blur()
     cy.get('#searchform').click('right')
-    cy.get('form[role="search"]')
-      .find('input[name="btnK"]')
-      .last()
-      .click()
+    getSearchButton().click()
     cy.url().should('contain', '=AZoom+JP&')
   })
 
@@ -32,29 +29,24 @@ describe('Simple testing Google with Cypress', () => {
   it('Search result for keyword "AZoom JP"', () => {
     cy.get('input[name="q"]').focus().type('AZoom JP').blur()
     cy.get('#searchform').click('right')
-    cy.get('form[role="search"]')
-      .find('input[name="btnK"]')
-      .last()
-      .click()
+    getSearchButton().click()
     cy.contains('不動産テックの株式会社アズーム').should('be.visible')
   })
 
   it('Click Google img after searched to go to Google Home', () => {
     cy.get('input[name="q"]').focus().type('AZoom JP').blur()
     cy.get('#searchform').click('right')
-    cy.get('form[role="search"]')
-      .find('input[name="btnK"]')
-      .last()
-      .click()
+    getSearchButton().click()
     cy.get('#searchform').click(50, 25)
     cy.url().should('include', '/webhp')
   })
 
   it('Cannot search without query', () => {
-    cy.get('form[role="search"]')
-      .find('input[name="btnK"]')
-      .last()
-      .click()
+    getSearchButton().click()
     cy.url().should('not.include', '/search')
   })
 })
+
+const getSearchButton = () => cy.get('form[role="search"]')
+  .find('input[name="btnK"]')
+  .last()
