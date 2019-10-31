@@ -1,12 +1,15 @@
 ## Play around with Cypress end-to-end testing
 ### Run test
 
-**Run with GUI**
+**Run e2e**
 
 ```
 # Go to test path, for example: e2e-google-testing
 $ cd path-to/e2e-google-testing
-$ yarn test:e2e
+# with gui
+$ yarn cypress open
+# headless
+$ yarn cypress run -b chrome --spec [path-to/spec-file.js]
 ```
 
 **Run with headless browser on docker environment**
